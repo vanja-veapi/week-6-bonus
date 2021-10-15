@@ -61,7 +61,7 @@ window.addEventListener("load", function(){
                     <img src="${data[i].user.profile_image.small}" alt="avatar" class="avatar"/>
                     <p>${data[i].user.username}</p>
                 </div>
-                <img src="${data[i].urls.regular}" alt="${data[i].alt_description}"/>
+                <img src="${data[i].urls.regular}" alt="${data[i].alt_description}" class="img--card"/>
                 <div class="information text--center">
                     ${data[i].user.portfolio_url === null ? "<a href='#' class='not--available'>Not available</a>" : `<a href='${data[i].user.portfolio_url}'>Portfolio</a>`}
                     
@@ -108,7 +108,7 @@ window.addEventListener("load", function(){
 
     function openLightBox()
     {
-        let img = this.children[1];
+        let img = this;
         let modal = document.querySelector("#modal");
         let body = document.querySelector("body");
         modal.innerHTML = ` <i id='close' class="fa fa-close close"></i><div class="img--container d--flex justify--content-center align--items-center">
@@ -127,7 +127,7 @@ window.addEventListener("load", function(){
     function onReadyCallback()
     {
         isLoaded = false;
-        let cards = this.document.querySelectorAll(".card");
+        let cards = this.document.querySelectorAll(".img--card");
         cards.forEach(card => {
             card.addEventListener("click", openLightBox);
         })

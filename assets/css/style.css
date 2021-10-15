@@ -141,7 +141,8 @@ main {
 }
 .modal .img--container img {
     width: 100%;
-    object-fit: unset;
+    object-fit: contain;
+    max-height: 100%;
 }
 .mr-5 {
     margin-right: 5px;
