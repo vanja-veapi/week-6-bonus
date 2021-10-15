@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --green: #05a081;
+    --black: #232a34;
+
+    --column-gutter: 20px;
+    --columns: 3;
+
+    --row-gutter: 10px;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+tbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: var(--green);
+}
+i {
+    font-size: 30px;
+    width: 100%;
+}
+main {
+    width: 100%;
+    min-height: 100vh;
+}
+.logo {
+    width: 50px;
+}
+.container {
+    padding: 20px;
+    margin: 0px auto;
+    max-width: 1120px;
+    grid-column-gap: var(--column-gutter);
+    align-items: start;
+    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+}
+.grid--template-1 {
+    grid-template-columns: repeat(var(--columns)) minmax(0, 1fr) !important;
+}
+.overflow--hidden {
+    overflow: hidden;
+}
+.d--none {
+    display: none;
+}
+.d--block {
+    display: block;
+}
+.d--flex {
+    display: flex;
+}
+.d--grid {
+    display: grid;
+}
+.justify--content-between {
+    justify-content: space-between;
+}
+.justify--content-around {
+    justify-content: space-around;
+}
+.justify--content-center {
+    justify-content: center;
+}
+.align--items-center {
+    align-items: center;
+}
+.views .btn {
+    margin: 5px;
+}
+.btn {
+    font-size: 30px;
+    padding: 5px;
+    cursor: pointer;
+    border: unset;
+    outline: none;
+    background-color: unset;
+    color: var(--green);
+}
+.btn:hover {
+    color: #fff;
+}
+.text--green {
+    color: var(--green);
+}
+.text--center {
+    text-align: center;
+}
+.card {
+    font-size: 19px;
+    padding: 10px;
+    position: relative;
+    border: 2px solid var(--green);
+}
+.img--card:hover {
+    cursor: zoom-in;
+    filter: saturate(35%);
+    box-shadow: 0 0 10px var(--green);
+    -webkit-box-shadow: 0 0 10px var(--green);
+    -moz-box-shadow: 0 0 10px var(--green);
+}
+.card a:hover {
+    color: #06866d;
+}
+.avatar {
+    width: initial;
+    border-radius: 50%;
+    margin: 15px 0;
+}
+.info {
+    z-index: 1;
+    position: absolute;
+    left: 20px;
+    bottom: 170px;
+}
+.info p {
+    color: #fff;
+    margin-left: 10px;
+}
+.img--fluid {
+    max-width: 100%;
+    width: initial;
+}
+.img--container {
+    margin: 0 auto;
+}
+.modal .img--container {
+    width: 90%;
+    margin: 0 auto;
+    height: inherit;
+    max-width: 800px;
+}
+.modal .img--container img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+}
+.mr-5 {
+    margin-right: 5px;
+}
+/*[]*/
+.header {
+    padding: 15px 20px;
+    background-color: var(--black);
+}
+.card,
+.img--fluid {
+    border-radius: 7px;
+}
+.statistic,
+.social__media {
+    margin: 10px 0;
+}
+img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--row-gutter);
+}
+.modal {
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.95);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.loading {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.8);
+    background-image: url(../loader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.close {
+    cursor: pointer;
+    position: absolute;
+    text-align: right;
+    color: #fff;
+    font-size: 30px;
+    top: 20px;
+    right: 20px;
+}
+.close:active {
+    color: var(--green);
+}
+.not--available {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+}
+@media screen and (max-width: 720px) {
+    :root {
+        --columns: 1;
+        --column-gutter: 10px;
+    }
+    .btn {
+        display: none;
+    }
+    .loading {
+        background-size: 128px 128px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .card {
+        border: unset;
+        padding: unset;
+    }
+    .container {
+        padding: 10px;
+        margin: unset;
+    }
+    .info {
+        left: 5px;
+        bottom: 155px;
+        font-size: 14px;
+    }
+}
