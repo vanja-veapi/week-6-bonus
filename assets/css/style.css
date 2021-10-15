@@ -101,7 +101,7 @@ main {
     position: relative;
     border: 2px solid var(--green);
 }
-.card img:hover {
+.img--card:hover {
     cursor: zoom-in;
     filter: saturate(35%);
     box-shadow: 0 0 10px var(--green);
